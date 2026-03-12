@@ -347,7 +347,7 @@ function formatCommentDate(dateStr: string): string {
                                 <div
                                     v-for="(scoreEntry, index) in scores"
                                     :key="scoreEntry.id"
-                                    class="flex items-center justify-between rounded-lg border border-[#FBE3E0]/10 px-4 py-3 transition-colors hover:bg-[#FBE3E0]/5"
+                                    class="group flex items-center justify-between rounded-lg border border-[#FBE3E0]/10 px-4 py-3 transition-colors hover:bg-[#FBE3E0]/10"
                                 >
                                     <div class="flex items-center gap-3">
                                         <span class="min-w-[2rem] text-center text-sm font-bold text-[#FBE3E0]/70">
@@ -357,11 +357,11 @@ function formatCommentDate(dateStr: string): string {
                                             v-if="scoreEntry.user.profile_picture"
                                             :src="scoreEntry.user.profile_picture"
                                             :alt="scoreEntry.user.name"
-                                            class="h-8 w-8 rounded-full object-cover"
+                                            class="h-10 w-10 rounded-full object-cover"
                                         />
                                         <div
                                             v-else
-                                            class="flex h-8 w-8 items-center justify-center rounded-full bg-[#FBE3E0]/20 text-xs font-bold text-[#FBE3E0]"
+                                            class="flex h-10 w-10 items-center justify-center rounded-full bg-[#FBE3E0]/20 text-sm font-bold text-[#FBE3E0]"
                                         >
                                             {{ scoreEntry.user.name.charAt(0).toUpperCase() }}
                                         </div>
@@ -469,11 +469,11 @@ function formatCommentDate(dateStr: string): string {
                                                 v-if="comment.user.profile_picture"
                                                 :src="comment.user.profile_picture"
                                                 :alt="comment.user.name"
-                                                class="h-6 w-6 rounded-full object-cover"
+                                                class="h-8 w-8 rounded-full object-cover"
                                             />
                                             <div
                                                 v-else
-                                                class="flex h-6 w-6 items-center justify-center rounded-full bg-[#FBE3E0]/20 text-xs font-bold text-[#FBE3E0]"
+                                                class="flex h-8 w-8 items-center justify-center rounded-full bg-[#FBE3E0]/20 text-xs font-bold text-[#FBE3E0]"
                                             >
                                                 {{ comment.user.name.charAt(0).toUpperCase() }}
                                             </div>
@@ -488,7 +488,7 @@ function formatCommentDate(dateStr: string): string {
                                             <Trash2 class="h-3 w-3" />
                                         </button>
                                     </div>
-                                    <p class="mt-1.5 pl-8 text-sm text-[#FBE3E0]/90">{{ comment.body }}</p>
+                                    <p class="mt-1.5 pl-10 text-sm text-[#FBE3E0]/90">{{ comment.body }}</p>
                                 </div>
                             </div>
                         </CardContent>

@@ -146,11 +146,11 @@ function submit() {
                                     v-if="profilePicturePreview || currentProfilePicture"
                                     :src="profilePicturePreview ?? currentProfilePicture ?? ''"
                                     alt="Profile picture"
-                                    class="h-16 w-16 rounded-full object-cover"
+                                    class="h-20 w-20 rounded-full object-cover"
                                 />
                                 <div
                                     v-else
-                                    class="flex h-16 w-16 items-center justify-center rounded-full bg-muted text-xl font-bold text-muted-foreground"
+                                    class="flex h-20 w-20 items-center justify-center rounded-full bg-muted text-2xl font-bold text-muted-foreground"
                                 >
                                     {{ user.name.charAt(0).toUpperCase() }}
                                 </div>

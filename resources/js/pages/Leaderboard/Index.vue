@@ -127,7 +127,7 @@ function getRankColor(rank: number, lastRank: number): string {
                                 <tr
                                     v-for="standing in overallStandings"
                                     :key="standing.rank"
-                                    class="border-b border-[#FBE3E0]/10 transition-colors hover:bg-[#FBE3E0] hover:text-[#677D74]"
+                                    class="group border-b border-[#FBE3E0]/10 transition-colors hover:bg-[#FBE3E0]"
                                     :class="{ 'bg-[#FBE3E0]/10': standing.is_winner }"
                                 >
                                     <td class="px-3 py-3">
@@ -138,7 +138,7 @@ function getRankColor(rank: number, lastRank: number): string {
                                                 class="h-4 w-4"
                                                 :class="getRankColor(standing.rank, lastOverallRank)"
                                             />
-                                            <span class="font-bold text-[#FBE3E0]">{{ standing.rank }}</span>
+                                            <span class="font-bold text-[#FBE3E0] group-hover:text-[#677D74]">{{ standing.rank }}</span>
                                         </div>
                                     </td>
                                     <td class="px-3 py-3">
@@ -147,17 +147,17 @@ function getRankColor(rank: number, lastRank: number): string {
                                                 v-if="standing.profile_picture"
                                                 :src="standing.profile_picture"
                                                 :alt="standing.name"
-                                                class="h-8 w-8 rounded-full object-cover"
+                                                class="h-10 w-10 rounded-full object-cover"
                                             />
                                             <div
                                                 v-else
-                                                class="flex h-8 w-8 items-center justify-center rounded-full bg-[#FBE3E0]/20 text-xs font-bold text-[#FBE3E0]"
+                                                class="flex h-10 w-10 items-center justify-center rounded-full bg-[#FBE3E0]/20 text-sm font-bold text-[#FBE3E0] group-hover:bg-[#677D74]/20 group-hover:text-[#677D74]"
                                             >
                                                 {{ standing.name.charAt(0).toUpperCase() }}
                                             </div>
                                             <div>
-                                                <div class="font-semibold text-[#FBE3E0]">{{ standing.name }}</div>
-                                                <div v-if="standing.team_name" class="text-xs text-[#FBE3E0]/60">{{ standing.team_name }}</div>
+                                                <div class="font-semibold text-[#FBE3E0] group-hover:text-[#677D74]">{{ standing.name }}</div>
+                                                <div v-if="standing.team_name" class="text-xs text-[#FBE3E0]/60 group-hover:text-[#677D74]/60">{{ standing.team_name }}</div>
                                             </div>
                                             <span v-if="standing.rank === 1" class="ml-1 inline-flex items-center rounded-full bg-yellow-400/20 px-2 py-0.5 text-xs font-medium text-yellow-300">
                                                 Leader
@@ -167,9 +167,9 @@ function getRankColor(rank: number, lastRank: number): string {
                                             </span>
                                         </div>
                                     </td>
-                                    <td class="px-3 py-3 text-right font-bold text-[#FBE3E0]">{{ standing.total_score }}</td>
-                                    <td class="hidden px-3 py-3 text-right text-[#FBE3E0]/80 sm:table-cell">{{ standing.average_score.toFixed(1) }}</td>
-                                    <td class="hidden px-3 py-3 text-right text-[#FBE3E0]/80 sm:table-cell">{{ standing.weeks_played }}</td>
+                                    <td class="px-3 py-3 text-right font-bold text-[#FBE3E0] group-hover:text-[#677D74]">{{ standing.total_score }}</td>
+                                    <td class="hidden px-3 py-3 text-right text-[#FBE3E0]/80 group-hover:text-[#677D74]/80 sm:table-cell">{{ standing.average_score.toFixed(1) }}</td>
+                                    <td class="hidden px-3 py-3 text-right text-[#FBE3E0]/80 group-hover:text-[#677D74]/80 sm:table-cell">{{ standing.weeks_played }}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -217,7 +217,7 @@ function getRankColor(rank: number, lastRank: number): string {
                                 <tr
                                     v-for="standing in currentWeekStandings"
                                     :key="standing.rank"
-                                    class="border-b border-[#FBE3E0]/10 transition-colors hover:bg-[#FBE3E0] hover:text-[#677D74]"
+                                    class="group border-b border-[#FBE3E0]/10 transition-colors hover:bg-[#FBE3E0]"
                                     :class="{ 'bg-[#FBE3E0]/10': standing.is_winner }"
                                 >
                                     <td class="px-3 py-3">
@@ -228,7 +228,7 @@ function getRankColor(rank: number, lastRank: number): string {
                                                 class="h-4 w-4"
                                                 :class="getRankColor(standing.rank, lastWeekRank)"
                                             />
-                                            <span class="font-bold text-[#FBE3E0]">{{ standing.rank }}</span>
+                                            <span class="font-bold text-[#FBE3E0] group-hover:text-[#677D74]">{{ standing.rank }}</span>
                                         </div>
                                     </td>
                                     <td class="px-3 py-3">
@@ -237,17 +237,17 @@ function getRankColor(rank: number, lastRank: number): string {
                                                 v-if="standing.profile_picture"
                                                 :src="standing.profile_picture"
                                                 :alt="standing.name"
-                                                class="h-8 w-8 rounded-full object-cover"
+                                                class="h-10 w-10 rounded-full object-cover"
                                             />
                                             <div
                                                 v-else
-                                                class="flex h-8 w-8 items-center justify-center rounded-full bg-[#FBE3E0]/20 text-xs font-bold text-[#FBE3E0]"
+                                                class="flex h-10 w-10 items-center justify-center rounded-full bg-[#FBE3E0]/20 text-sm font-bold text-[#FBE3E0] group-hover:bg-[#677D74]/20 group-hover:text-[#677D74]"
                                             >
                                                 {{ standing.name.charAt(0).toUpperCase() }}
                                             </div>
                                             <div>
-                                                <div class="font-semibold text-[#FBE3E0]">{{ standing.name }}</div>
-                                                <div v-if="standing.team_name" class="text-xs text-[#FBE3E0]/60">{{ standing.team_name }}</div>
+                                                <div class="font-semibold text-[#FBE3E0] group-hover:text-[#677D74]">{{ standing.name }}</div>
+                                                <div v-if="standing.team_name" class="text-xs text-[#FBE3E0]/60 group-hover:text-[#677D74]/60">{{ standing.team_name }}</div>
                                             </div>
                                             <span v-if="standing.is_winner" class="ml-1 inline-flex items-center rounded-full bg-yellow-400/20 px-2 py-0.5 text-xs font-medium text-yellow-300">
                                                 Leader
@@ -257,7 +257,7 @@ function getRankColor(rank: number, lastRank: number): string {
                                             </span>
                                         </div>
                                     </td>
-                                    <td class="px-3 py-3 text-right font-bold text-[#FBE3E0]">{{ standing.score }}</td>
+                                    <td class="px-3 py-3 text-right font-bold text-[#FBE3E0] group-hover:text-[#677D74]">{{ standing.score }}</td>
                                 </tr>
                             </tbody>
                         </table>
